@@ -476,7 +476,7 @@ def transnext(pretrained=False, **kwargs):
     model = TransNeXt(window_size=[3, 3, 3, None],
                       patch_size=4, embed_dims=[48, 96, 192, 384], num_heads=[2, 4, 8, 16],
                       mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
-                      norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 2, 10, 2], sr_ratios=[8, 4, 2, 1],
+                      norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=[2, 2, 5, 2], sr_ratios=[8, 4, 2, 1],
                       **kwargs)
     model.default_cfg = _cfg()
     return model
