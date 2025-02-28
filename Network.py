@@ -466,8 +466,8 @@ class TransNeXt(nn.Module):
     def forward(self, x):
         x, features = self.forward_features(x)
         x = self.up_features(x, features)
-        x = self.segmentation_head(x)
-
+        x = self.up0(x)
+        x = self.outc(x)
         return x
 
 
