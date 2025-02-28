@@ -472,7 +472,7 @@ class TransNeXt(nn.Module):
 
 
 @register_model
-def transnext_micro(pretrained=False, **kwargs):
+def transnext(pretrained=False, **kwargs):
     model = TransNeXt(window_size=[3, 3, 3, None],
                       patch_size=4, embed_dims=[48, 96, 192, 384], num_heads=[2, 4, 8, 16],
                       mlp_ratios=[8, 8, 4, 4], qkv_bias=True,
@@ -483,6 +483,6 @@ def transnext_micro(pretrained=False, **kwargs):
 
 
 Input = torch.randn(1, 1, 256, 256)
-model = transnext_micro()
+model = transnext()
 output = model(Input)
 print(output.size())
